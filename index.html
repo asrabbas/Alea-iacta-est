@@ -25,89 +25,47 @@
     [data-theme="terminal"] { --bg: #0E0E0E; --text: #C8FF00; --muted: #7a9a00; --accent: #C8FF00; --border: #2a2a2a; --font-display: monospace; }
     [data-theme="paper"] { --bg: #FFFEF8; --text: #111111; --muted: #777; --accent: #111111; --border: #111111; }
     [data-theme="monsoon"] { --bg: #121A26; --text: #DDE7F0; --muted: #7a8a9a; --accent: #6AAFFF; --border: #2a3a4a; }
-
-    /* NEW 5 - Fixed to use same variable system */
     [data-theme="kawaii"] { --bg: #FFF0F5; --text: #2D1B2D; --muted: #a87aa0; --accent: #FF6B9D; --border: #2D1B2D; --font-display: 'Fredoka', sans-serif; }
     [data-theme="zen"] { --bg: #F5F1E8; --text: #2C2C2C; --muted: #8B7D6B; --accent: #8B7D6B; --border: #D6CDB8; --font-display: 'Shippori Mincho', serif; }
     [data-theme="kyoto-grid"] { --bg: #FEFEFE; --text: #111111; --muted: #888; --accent: #E60012; --border: #111; }
     [data-theme="manga"] { --bg: #FFFFFF; --text: #000000; --muted: #555; --accent: #00E5FF; --border: #000; --font-display: 'Bangers', cursive; }
     [data-theme="hanok"] { --bg: #FDF6E3; --text: #3D2B1F; --muted: #a08060; --accent: #C04C1A; --border: #3D2B1F; --font-display: 'Gowun Batang', serif; }
-    /* === PATTERNS & GRIDS - RESTORED === */
-[data-theme="bauhaus"] { background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 32px 32px; }
-[data-theme="islamic"] { background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 40px 40px; }
-[data-theme="truck"] { background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px); background-size: 28px 28px; }
-[data-theme="monsoon"] { background-image: linear-gradient(rgba(106,175,255,0.08) 1px, transparent 1px); background-size: 100% 24px; }
-
-/* YOUR LOST 5 - NOW WITH GRIDS */
-[data-theme="kawaii"] {
-  background-image: radial-gradient(#FFB6D9 2.5px, transparent 2.5px);
-  background-size: 26px 26px;
-}
-[data-theme="zen"] {
-  background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
-}
-[data-theme="kyoto-grid"] {
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-[data-theme="manga"] {
-  background-image: radial-gradient(#000 1.8px, transparent 1.8px);
-  background-size: 14px 14px;
-}
-[data-theme="hanok"] {
-  background-image: linear-gradient(rgba(192,76,26,0.07) 1px, transparent 1px);
-  background-size: 100% 32px;
-}
-[data-theme="manga"] h1 {
-  transform: rotate(-1.5deg);
-  text-transform: uppercase;
-  -webkit-text-stroke: 1.5px var(--text);
-}
-[data-theme="kawaii"] #themeBtn,
-[data-theme="manga"] #themeBtn {
-  border-width: 3px;
-  box-shadow: 4px 4px 0px var(--border);
-  border-radius: 9999px;
-}
 
     body {
-      background: var(--bg);
+      background-color: var(--bg);
       color: var(--text);
       font-family: var(--font-display);
-      transition: background 0.6s cubic-bezier(0.77, 0, 0.175, 1), color 0.6s ease;
+      transition: background-color 0.6s cubic-bezier(0.77, 0, 0.175, 1), color 0.6s ease;
     }
-   .theme-pattern {
-      position: fixed; inset: 0; opacity: 0; pointer-events: none; transition: opacity 0.6s ease;
-    }
+
+    /* === PATTERNS & GRIDS - RESTORED (AFTER body) === */
+    [data-theme="bauhaus"] { background-image: radial-gradient(var(--border) 1px, transparent 1px); background-size: 32px 32px; }
+    [data-theme="islamic"] { background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 40px 40px; }
+    [data-theme="truck"] { background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px); background-size: 28px 28px; }
+    [data-theme="monsoon"] { background-image: linear-gradient(rgba(106,175,255,0.08) 1px, transparent 1px); background-size: 100% 24px; }
+    [data-theme="kawaii"] { background-image: radial-gradient(#FFB6D9 2.5px, transparent 2.5px); background-size: 26px 26px; }
+    [data-theme="zen"] { background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png'); }
+    [data-theme="kyoto-grid"] { background-image: linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px); background-size: 80px 80px; }
+    [data-theme="manga"] { background-image: radial-gradient(#000 1.8px, transparent 1.8px); background-size: 14px 14px; }
+    [data-theme="hanok"] { background-image: linear-gradient(rgba(192,76,26,0.07) 1px, transparent 1px); background-size: 100% 32px; }
+
+    [data-theme="manga"] h1 { transform: rotate(-1.5deg); text-transform: uppercase; -webkit-text-stroke: 1.5px var(--text); }
+    [data-theme="kawaii"] #themeBtn, [data-theme="manga"] #themeBtn { border-width: 3px; box-shadow: 4px 4px 0px var(--border); border-radius: 9999px; }
+   .theme-pattern { position: fixed; inset: 0; opacity: 0; pointer-events: none; }
   </style>
 </head>
 <body data-theme="noir" class="min-h-screen flex flex-col antialiased overflow-hidden">
-
   <div class="theme-pattern" id="patternLayer"></div>
-
   <nav class="relative z-10 flex justify-between items-center p-8 md:p-10 text-sm tracking-widest">
     <span class="opacity-60">ALEA-IACTA-EST / ATELIER • 15 MOTIFS</span>
-    <button id="themeBtn" class="border border-[var(--border)] px-5 py-2 rounded-full hover:bg-[var(--text)] hover:text-[var(--bg)] transition-all">
-      THEME: NOIR ●
-    </button>
+    <button id="themeBtn" class="border border-[var(--border)] px-5 py-2 rounded-full hover:bg-[var(--text)] hover:text-[var(--bg)] transition-all">THEME: NOIR ●</button>
   </nav>
-
   <div class="relative z-10 flex-1 flex flex-col justify-center items-center px-6 text-center">
     <p class="text-[var(--muted)] tracking-[0.3em] text-xs mb-6" id="motifLabel">MOTIF — MINIMAL / HIGH CONTRAST / TIMELESS</p>
-    <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter max-w-4xl" style="font-family: var(--font-display);">
-      I Build Websites<br><span class="italic font-normal" style="font-family: var(--font-serif); color: var(--accent);">That Make Money.</span>
-    </h1>
-    <p class="text-[var(--muted)] mt-8 max-w-xl text-lg leading-relaxed" id="description">
-      Freelance developer from Islamabad. One page, one motif, one message.
-    </p>
+    <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter max-w-4xl" style="font-family: var(--font-display);">I Build Websites<br><span class="italic font-normal" style="font-family: var(--font-serif); color: var(--accent);">That Make Money.</span></h1>
+    <p class="text-[var(--muted)] mt-8 max-w-xl text-lg leading-relaxed" id="description">Freelance developer from Islamabad. One page, one motif, one message.</p>
   </div>
-
-  <footer class="relative z-10 p-8 text-center text-xs tracking-widest text-[var(--muted)]">
-    15 THEMES • 1 ENGINE • BUILT ON DAY 1
-  </footer>
-
+  <footer class="relative z-10 p-8 text-center text-xs tracking-widest text-[var(--muted)]">15 THEMES • 1 ENGINE • BUILT ON DAY 1</footer>
 <script>
 const themes = [
   { id: 'noir', label: 'THEME: NOIR ●', motif: 'MOTIF — MINIMAL / HIGH CONTRAST / TIMELESS', desc: 'Pure black, pure intent. The die is cast.' },
@@ -126,11 +84,9 @@ const themes = [
   { id: 'manga', label: 'THEME: MANGA ★', motif: 'MOTIF — HALFTONE / POP / COMIC', desc: 'Shonen Jump energy. Loud, collectible, viral.' },
   { id: 'hanok', label: 'THEME: HANOK 韩', motif: 'MOTIF — HANJI / WARM / EASTERN', desc: 'Korean paper texture. Warm eastern soul.' },
 ];
-
 let current = 0;
 const btn = document.getElementById('themeBtn');
 const body = document.body;
-
 btn.addEventListener('click', () => {
   current = (current + 1) % themes.length;
   const t = themes[current];
