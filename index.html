@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asr — Theme Atelier</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Instrument+Serif:ital@0;1&family=Fredoka:wght@600&family=Shippori+Mincho&family=Bangers&family=Gowun+Batang&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0a0a0a;
@@ -16,74 +16,23 @@
       --font-display: 'Space Grotesk', sans-serif;
       --font-serif: 'Instrument Serif', serif;
     }
-    [data-theme="bauhaus"] {
-      --bg: #F5F1E8;
-      --text: #111111;
-      --muted: #666;
-      --accent: #FF3B30;
-      --border: #111111;
-      --font-display: 'Space Grotesk', sans-serif;
-    }
-    [data-theme="islamic"] {
-      --bg: #0B3328;
-      --text: #E6D5B8;
-      --muted: #9AB0A6;
-      --accent: #D4AF37;
-      --border: #1e5c4b;
-      --font-display: 'Instrument Serif', serif;
-    }
-    [data-theme="cyber-mughal"] {
-      --bg: #050508;
-      --text: #E0F2F1;
-      --muted: #7ad3c9;
-      --accent: #00FFC6;
-      --border: #1a3a38;
-      --font-display: 'Space Grotesk', sans-serif;
-    }
-    [data-theme="brutalist"] {
-      --bg: #ffffff;
-      --text: #000000;
-      --muted: #555;
-      --accent: #000000;
-      --border: #000000;
-    }
-    [data-theme="truck"] {
-  --bg: #FFF7CC;
-  --text: #1a1a1a;
-  --muted: #a16207;
-  --accent: #E91E63;
-  --border: #111;
-  --font-display: 'Space Grotesk', sans-serif;
-}
-[data-theme="clay"] {
-  --bg: #E7D8C9;
-  --text: #3D2B1F;
-  --muted: #8C6A4F;
-  --accent: #A65A26;
-  --border: #3D2B1F;
-}
-[data-theme="terminal"] {
-  --bg: #0E0E0E;
-  --text: #C8FF00;
-  --muted: #7a9a00;
-  --accent: #C8FF00;
-  --border: #2a2a2a;
-  --font-display: monospace;
-}
-[data-theme="paper"] {
-  --bg: #FFFEF8;
-  --text: #111111;
-  --muted: #777;
-  --accent: #111111;
-  --border: #111111;
-}
-[data-theme="monsoon"] {
-  --bg: #121A26;
-  --text: #DDE7F0;
-  --muted: #7a8a9a;
-  --accent: #6AAFFF;
-  --border: #2a3a4a;
-}
+    [data-theme="bauhaus"] { --bg: #F5F1E8; --text: #111111; --muted: #666; --accent: #FF3B30; --border: #111111; }
+    [data-theme="islamic"] { --bg: #0B3328; --text: #E6D5B8; --muted: #9AB0A6; --accent: #D4AF37; --border: #1e5c4b; --font-display: 'Instrument Serif', serif; }
+    [data-theme="cyber-mughal"] { --bg: #050508; --text: #E0F2F1; --muted: #7ad3c9; --accent: #00FFC6; --border: #1a3a38; }
+    [data-theme="brutalist"] { --bg: #ffffff; --text: #000000; --muted: #555; --accent: #000000; --border: #000000; }
+    [data-theme="truck"] { --bg: #FFF7CC; --text: #1a1a1a; --muted: #a16207; --accent: #E91E63; --border: #111; }
+    [data-theme="clay"] { --bg: #E7D8C9; --text: #3D2B1F; --muted: #8C6A4F; --accent: #A65A26; --border: #3D2B1F; }
+    [data-theme="terminal"] { --bg: #0E0E0E; --text: #C8FF00; --muted: #7a9a00; --accent: #C8FF00; --border: #2a2a2a; --font-display: monospace; }
+    [data-theme="paper"] { --bg: #FFFEF8; --text: #111111; --muted: #777; --accent: #111111; --border: #111111; }
+    [data-theme="monsoon"] { --bg: #121A26; --text: #DDE7F0; --muted: #7a8a9a; --accent: #6AAFFF; --border: #2a3a4a; }
+
+    /* NEW 5 - Fixed to use same variable system */
+    [data-theme="kawaii"] { --bg: #FFF0F5; --text: #2D1B2D; --muted: #a87aa0; --accent: #FF6B9D; --border: #2D1B2D; --font-display: 'Fredoka', sans-serif; }
+    [data-theme="zen"] { --bg: #F5F1E8; --text: #2C2C2C; --muted: #8B7D6B; --accent: #8B7D6B; --border: #D6CDB8; --font-display: 'Shippori Mincho', serif; }
+    [data-theme="kyoto-grid"] { --bg: #FEFEFE; --text: #111111; --muted: #888; --accent: #E60012; --border: #111; }
+    [data-theme="manga"] { --bg: #FFFFFF; --text: #000000; --muted: #555; --accent: #00E5FF; --border: #000; --font-display: 'Bangers', cursive; }
+    [data-theme="hanok"] { --bg: #FDF6E3; --text: #3D2B1F; --muted: #a08060; --accent: #C04C1A; --border: #3D2B1F; --font-display: 'Gowun Batang', serif; }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -91,173 +40,58 @@
       transition: background 0.6s cubic-bezier(0.77, 0, 0.175, 1), color 0.6s ease;
     }
    .theme-pattern {
-      position: fixed;
-      inset: 0;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.6s ease;
+      position: fixed; inset: 0; opacity: 0; pointer-events: none; transition: opacity 0.6s ease;
     }
-    [data-theme="islamic"].pattern-islamic { opacity: 0.08; }
-    [data-theme="bauhaus"].pattern-bauhaus { opacity: 1; }
-    /* 11. KAWAII - Cute Japanese */
-body[data-theme="kawaii"] {
-  background-image: radial-gradient(#FFB6D9 2px, transparent 2px);
-  background-size: 24px 24px;
-}
-body[data-theme="kawaii"] .card {
-  border-radius: 24px;
-  border: 3px solid #2D1B2D;
-  box-shadow: 6px 6px 0px #2D1B2D;
-}
-
-/* 12. ZEN - Ink wash */
-body[data-theme="zen"] {
-  background: #F5F1E8 url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
-}
-body[data-theme="zen"] .card {
-  border: none;
-  border-left: 4px solid #8B7D6B;
-  background: rgba(255,255,255,0.6);
-}
-
-/* 13. KYOTO GRID - Japanese Swiss Grid */
-body[data-theme="kyoto-grid"] {
-  background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px);
-  background-size: 80px 80px;
-  background-color: #FEFEFE;
-}
-body[data-theme="kyoto-grid"] .card {
-  border-left: 12px solid #E60012;
-}
-
-/* 14. MANGA DOT - Halftone Pop */
-body[data-theme="manga"] {
-  background-image: radial-gradient(#000 1.5px, transparent 1.5px);
-  background-size: 12px 12px;
-}
-body[data-theme="manga"] .card {
-  transform: rotate(-1deg);
-}
-body[data-theme="manga"] .card:nth-child(even) {
-  transform: rotate(1deg);
-}
-
-/* 15. HANOK - Warm Eastern */
-body[data-theme="hanok"] {
-  background-color: #FDF6E3;
-  background-image: linear-gradient(rgba(192,76,26,0.05) 1px, transparent 1px);
-  background-size: 100% 32px;
-}
-body[data-theme="hanok"] .card {
-  border-radius: 8px 32px 8px 32px;
-}
   </style>
 </head>
 <body data-theme="noir" class="min-h-screen flex flex-col antialiased overflow-hidden">
 
-  <!-- Patterns / Motifs Layer -->
-  <div class="theme-pattern pattern-islamic" style="background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 40px 40px;"></div>
-  <div class="theme-pattern pattern-bauhaus">
-    <div class="absolute top-20 right-20 w-32 h-32 rounded-full bg-[var(--accent)]"></div>
-    <div class="absolute bottom-20 left-20 w-32 h-32 bg-black"></div>
-  </div>
+  <div class="theme-pattern" id="patternLayer"></div>
 
-  <!-- Header -->
   <nav class="relative z-10 flex justify-between items-center p-8 md:p-10 text-sm tracking-widest">
-    <span class="opacity-60">ALEA-IACTA-EST / ATELIER</span>
+    <span class="opacity-60">ALEA-IACTA-EST / ATELIER • 15 MOTIFS</span>
     <button id="themeBtn" class="border border-[var(--border)] px-5 py-2 rounded-full hover:bg-[var(--text)] hover:text-[var(--bg)] transition-all">
       THEME: NOIR ●
     </button>
   </nav>
 
-  <!-- Main -->
   <div class="relative z-10 flex-1 flex flex-col justify-center items-center px-6 text-center">
-    <p class="text-[var(--muted)] tracking-[0.3em] text-xs mb-6" id="motifLabel">MOTIF — MINIMAL / HIGH CONTRAST / TIMeless</p>
+    <p class="text-[var(--muted)] tracking-[0.3em] text-xs mb-6" id="motifLabel">MOTIF — MINIMAL / HIGH CONTRAST / TIMELESS</p>
     <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter max-w-4xl" style="font-family: var(--font-display);">
       I Build Websites<br><span class="italic font-normal" style="font-family: var(--font-serif); color: var(--accent);">That Make Money.</span>
     </h1>
     <p class="text-[var(--muted)] mt-8 max-w-xl text-lg leading-relaxed" id="description">
-      Freelance developer from Islamabad. One page, one motif, one message. Click theme to change the entire world.
+      Freelance developer from Islamabad. One page, one motif, one message.
     </p>
-    <div class="flex gap-4 mt-10">
-      <a href="#" class="bg-[var(--text)] text-[var(--bg)] px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">Hire Me — Rs. 5000</a>
-      <a href="https://github.com/asrabbas/Alea-iacta-est" class="border border-[var(--border)] px-8 py-3 rounded-full backdrop-blur">View Code</a>
-    </div>
   </div>
 
   <footer class="relative z-10 p-8 text-center text-xs tracking-widest text-[var(--muted)]">
-    4 THEMES • 1 ENGINE • BUILT ON DAY 1
+    15 THEMES • 1 ENGINE • BUILT ON DAY 1
   </footer>
 
 <script>
 const themes = [
-  { id: 'noir', label: 'THEME: NOIR ●', motif: 'MOTIF — MINIMAL / HIGH CONTRAST / TIMELESS', desc: 'Freelance developer from Islamabad. Pure black, pure intent. The die is cast.' },
-  { id: 'bauhaus', label: 'THEME: BAUHAUS ■', motif: 'MOTIF — PRIMARY FORMS / GRID / FUNCTION', desc: 'Form follows function. Bauhaus taught us: a website should be a machine for selling.' },
-  { id: 'islamic', label: 'THEME: ISLAMIC ◆', motif: 'MOTIF — GEOMETRY / GOLD / HERITAGE', desc: 'Inspired by Mughal tilework and Islamic geometry. For brands that want legacy.' },
-  { id: 'cyber-mughal', label: 'THEME: CYBER-MUGHAL ◎', motif: 'MOTIF — FUTURE HERITAGE / NEON / JALI', desc: 'What if Lahore in 2126 built websites? Neon Jali, emerald night, gold accent.' },
-  { id: 'brutalist', label: 'THEME: BRUTALIST ▲', motif: 'MOTIF — RAW / CONCRETE / TRUTH', desc: 'No shadows. No gradients. Just raw HTML truth. Loudest theme, highest conversion.' },
-{ id: 'truck', label: 'THEME: TRUCK-ART ✿', motif: 'MOTIF — PHOOL PATTI / VIBRANT / DESI POP', desc: 'Pakistan moving at 80km/h. Every color screaming joy. For brands that are loud and proud.' },
-{ id: 'clay', label: 'THEME: CLAY ○', motif: 'MOTIF — TERRA / HAND / EARTH', desc: '5000 years of Mehrgarh in one page. Warm clay, hand-thrown edges. For organic & heritage.' },
-{ id: 'terminal', label: 'THEME: TERMINAL >_', motif: 'MOTIF — RAW CODE / GRID / SYSTEM', desc: '$ whoami -> builder. Green on black. No marketing, just shipping.' },
-{ id: 'paper', label: 'THEME: PAPER —', motif: 'MOTIF — INK / MARGIN / EDITORIAL', desc: 'Designed like a first-edition book. Double borders, serif headlines, absolute authority.' },
-{ id: 'monsoon', label: 'THEME: MONSOON ☔', motif: 'MOTIF — GLASS / BLUR / RAIN', desc: 'Islamabad in July. Window condensation, neon reflections in puddles. Premium monsoon.' },  {
-  id: 'kawaii',
-  name: 'KAWAII',
-  bg: '#FFF0F5',
-  text: '#2D1B2D',
-  accent: '#FF6B9D',
-  font: '"Fredoka", sans-serif',
-  radius: '24px',
-  border: '3px solid #2D1B2D',
-  shadow: '6px 6px 0px #2D1B2D'
-},
-{
-  id: 'zen',
-  name: 'ZEN / WABI-SABI',
-  bg: '#F5F1E8',
-  text: '#2C2C2C',
-  accent: '#8B7D6B',
-  font: '"Shippori Mincho", serif',
-  radius: '2px',
-  border: '1px solid #D6CDB8',
-  shadow: 'none'
-},
-{
-  id: 'kyoto-grid',
-  name: 'KYOTO GRID',
-  bg: '#FEFEFE',
-  text: '#111111',
-  accent: '#E60012',
-  font: '"Space Grotesk", sans-serif',
-  radius: '0px',
-  border: '1px solid #111',
-  shadow: 'none'
-},
-{
-  id: 'manga',
-  name: 'MANGA DOT',
-  bg: '#FFFFFF',
-  text: '#000000',
-  accent: '#00E5FF',
-  font: '"Bangers", cursive',
-  radius: '0px',
-  border: '4px solid #000',
-  shadow: '8px 8px 0px #000'
-},
-{
-  id: 'hanok',
-  name: 'HANOK / EASTERN',
-  bg: '#FDF6E3',
-  text: '#3D2B1F',
-  accent: '#C04C1A',
-  font: '"Gowun Batang", serif',
-  radius: '8px 32px 8px 32px',
-  border: '2px solid #3D2B1F',
-  shadow: '4px 4px 0px #E8D5B5'
-}];
+  { id: 'noir', label: 'THEME: NOIR ●', motif: 'MOTIF — MINIMAL / HIGH CONTRAST / TIMELESS', desc: 'Pure black, pure intent. The die is cast.' },
+  { id: 'bauhaus', label: 'THEME: BAUHAUS ■', motif: 'MOTIF — PRIMARY FORMS / GRID / FUNCTION', desc: 'Form follows function. A website should be a machine for selling.' },
+  { id: 'islamic', label: 'THEME: ISLAMIC ◆', motif: 'MOTIF — GEOMETRY / GOLD / HERITAGE', desc: 'Inspired by Mughal tilework. For brands that want legacy.' },
+  { id: 'cyber-mughal', label: 'THEME: CYBER-MUGHAL ◎', motif: 'MOTIF — FUTURE HERITAGE / NEON / JALI', desc: 'What if Lahore in 2126 built websites?' },
+  { id: 'brutalist', label: 'THEME: BRUTALIST ▲', motif: 'MOTIF — RAW / CONCRETE / TRUTH', desc: 'No shadows. No gradients. Just raw truth.' },
+  { id: 'truck', label: 'THEME: TRUCK-ART ✿', motif: 'MOTIF — PHOOL PATTI / VIBRANT / DESI POP', desc: 'Pakistan moving at 80km/h. Joy.' },
+  { id: 'clay', label: 'THEME: CLAY ○', motif: 'MOTIF — TERRA / HAND / EARTH', desc: '5000 years of Mehrgarh in one page.' },
+  { id: 'terminal', label: 'THEME: TERMINAL >_', motif: 'MOTIF — RAW CODE / GRID / SYSTEM', desc: '$ whoami -> builder.' },
+  { id: 'paper', label: 'THEME: PAPER —', motif: 'MOTIF — INK / MARGIN / EDITORIAL', desc: 'Designed like a first-edition book.' },
+  { id: 'monsoon', label: 'THEME: MONSOON ☔', motif: 'MOTIF — GLASS / BLUR / RAIN', desc: 'Islamabad in July. Premium monsoon.' },
+  { id: 'kawaii', label: 'THEME: KAWAII ♡', motif: 'MOTIF — PASTEL / BUBBLE / CUTENESS', desc: 'Harajuku in Islamabad. Dopamine in CSS. For boba & bakeries.' },
+  { id: 'zen', label: 'THEME: ZEN 一', motif: 'MOTIF — WABI-SABI / BREATH / INK', desc: 'Empty space is luxury. Tea ceremony web.' },
+  { id: 'kyoto-grid', label: 'THEME: KYOTO GRID +', motif: 'MOTIF — 80PX GRID / RED / MUJI', desc: 'Strict Japanese grid. Muji for the web.' },
+  { id: 'manga', label: 'THEME: MANGA ★', motif: 'MOTIF — HALFTONE / POP / COMIC', desc: 'Shonen Jump energy. Loud, collectible, viral.' },
+  { id: 'hanok', label: 'THEME: HANOK 韩', motif: 'MOTIF — HANJI / WARM / EASTERN', desc: 'Korean paper texture. Warm eastern soul.' },
+];
+
 let current = 0;
 const btn = document.getElementById('themeBtn');
 const body = document.body;
+
 btn.addEventListener('click', () => {
   current = (current + 1) % themes.length;
   const t = themes[current];
