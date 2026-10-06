@@ -47,6 +47,43 @@
       --accent: #000000;
       --border: #000000;
     }
+    [data-theme="truck"] {
+  --bg: #FFF7CC;
+  --text: #1a1a1a;
+  --muted: #a16207;
+  --accent: #E91E63;
+  --border: #111;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+[data-theme="clay"] {
+  --bg: #E7D8C9;
+  --text: #3D2B1F;
+  --muted: #8C6A4F;
+  --accent: #A65A26;
+  --border: #3D2B1F;
+}
+[data-theme="terminal"] {
+  --bg: #0E0E0E;
+  --text: #C8FF00;
+  --muted: #7a9a00;
+  --accent: #C8FF00;
+  --border: #2a2a2a;
+  --font-display: monospace;
+}
+[data-theme="paper"] {
+  --bg: #FFFEF8;
+  --text: #111111;
+  --muted: #777;
+  --accent: #111111;
+  --border: #111111;
+}
+[data-theme="monsoon"] {
+  --bg: #121A26;
+  --text: #DDE7F0;
+  --muted: #7a8a9a;
+  --accent: #6AAFFF;
+  --border: #2a3a4a;
+}
     body {
       background: var(--bg);
       color: var(--text);
@@ -106,8 +143,12 @@ const themes = [
   { id: 'bauhaus', label: 'THEME: BAUHAUS ■', motif: 'MOTIF — PRIMARY FORMS / GRID / FUNCTION', desc: 'Form follows function. Bauhaus taught us: a website should be a machine for selling.' },
   { id: 'islamic', label: 'THEME: ISLAMIC ◆', motif: 'MOTIF — GEOMETRY / GOLD / HERITAGE', desc: 'Inspired by Mughal tilework and Islamic geometry. For brands that want legacy.' },
   { id: 'cyber-mughal', label: 'THEME: CYBER-MUGHAL ◎', motif: 'MOTIF — FUTURE HERITAGE / NEON / JALI', desc: 'What if Lahore in 2126 built websites? Neon Jali, emerald night, gold accent.' },
-  { id: 'brutalist', label: 'THEME: BRUTALIST ▲', motif: 'MOTIF — RAW / CONCRETE / TRUTH', desc: 'No shadows. No gradients. Just raw HTML truth. Loudest theme, highest conversion.' }
-];
+  { id: 'brutalist', label: 'THEME: BRUTALIST ▲', motif: 'MOTIF — RAW / CONCRETE / TRUTH', desc: 'No shadows. No gradients. Just raw HTML truth. Loudest theme, highest conversion.' },
+{ id: 'truck', label: 'THEME: TRUCK-ART ✿', motif: 'MOTIF — PHOOL PATTI / VIBRANT / DESI POP', desc: 'Pakistan moving at 80km/h. Every color screaming joy. For brands that are loud and proud.' },
+{ id: 'clay', label: 'THEME: CLAY ○', motif: 'MOTIF — TERRA / HAND / EARTH', desc: '5000 years of Mehrgarh in one page. Warm clay, hand-thrown edges. For organic & heritage.' },
+{ id: 'terminal', label: 'THEME: TERMINAL >_', motif: 'MOTIF — RAW CODE / GRID / SYSTEM', desc: '$ whoami -> builder. Green on black. No marketing, just shipping.' },
+{ id: 'paper', label: 'THEME: PAPER —', motif: 'MOTIF — INK / MARGIN / EDITORIAL', desc: 'Designed like a first-edition book. Double borders, serif headlines, absolute authority.' },
+{ id: 'monsoon', label: 'THEME: MONSOON ☔', motif: 'MOTIF — GLASS / BLUR / RAIN', desc: 'Islamabad in July. Window condensation, neon reflections in puddles. Premium monsoon.' }];
 let current = 0;
 const btn = document.getElementById('themeBtn');
 const body = document.body;
